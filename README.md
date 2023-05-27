@@ -75,8 +75,7 @@ switch ($path) {
         }
         break;
         
-    case
-    'api/subscribe':
+    case 'api/subscribe':
         if (
             isset($_SERVER['REQUEST_METHOD']) &&
             $_SERVER['REQUEST_METHOD'] === 'POST' &&
@@ -99,7 +98,11 @@ switch ($path) {
         break;
         
     case 'api/sendEmails':
-        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST' && is_file($file)) {
+        if (
+            isset($_SERVER['REQUEST_METHOD']) && 
+            $_SERVER['REQUEST_METHOD'] === 'POST' && 
+            is_file($file)
+        ) {
             $rate = file_get_contents('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=uah');
             $rate = json_decode($rate, true, 512);
             if (!empty($rate['bitcoin']['uah'])) {
