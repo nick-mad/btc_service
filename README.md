@@ -2,7 +2,7 @@
 
 Скопіюйте з репозиторію додаток 
 ```bash
-git clone git@github.com:nick-mad/btc_service.git
+git clone https://github.com/nick-mad/btc_service.git
 cd btc_service 
 ```
 
